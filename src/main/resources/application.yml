@@ -1,0 +1,18 @@
+#MySQL 셋팅
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pharmacy
+    username: ${DB_USER}
+    password: ${DB_PW}
+  sql:
+    init:
+      mode: NEVER
+  jpa:
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
