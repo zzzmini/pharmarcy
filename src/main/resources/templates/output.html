@@ -32,12 +32,12 @@
     <th>길안내 링크</th>
     <th>로드뷰 링크</th>
   </tr>
-  <tr>
-    <td>은혜약국</td>
-    <td>주소는 어쩌구...</td>
-    <td>10cm ?</td>
-    <td><a href="" >http://길안내</a></td>
-    <td><a href="" >http://로드뷰</a></td>
+  <tr th:each="out : ${outputList}" th:object="${out}">
+    <td th:text="*{pharmacyName}">은혜약국</td>
+    <td th:text="*{pharmacyAddress}">주소는 어쩌구...</td>
+    <td th:text="*{distance}">10cm ?</td>
+    <td><a th:href="*{directionURL}" >http://길안내</a></td>
+    <td><a th:href="*{roadViewURL}" >http://로드뷰</a></td>
   </tr>
 </table>
 <div class="grid-image">
