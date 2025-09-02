@@ -16,3 +16,8 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+
+kakao:
+  rest:
+    api:
+      key: ${KAKAO_REST_API_KEY}
