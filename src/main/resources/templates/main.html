@@ -42,12 +42,26 @@
         <img src="/images/map.png" alt="map" class="img-responsive img-rounded">
         <img src="/images/road.png" alt="road" class="img-responsive img-rounded">
       </div>
-      {{> footer}}
     </div>
   </div>
 </div>
 
 <!--부트스트랩 js, jquery 추가-->
 <script src="/js/bootstrap.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const input = document.getElementById('address_kakao');
+
+    input.addEventListener('click', function(){
+      new daum.Postcode({
+        oncomplete: function(data) {
+            // input에 찾은 주소 넣기
+            input.value = data.address;
+        }
+    }).open();
+    })
+  })
+</script>
 </body>
 </html>
